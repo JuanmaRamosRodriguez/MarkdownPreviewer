@@ -19,22 +19,40 @@
 
         function setDefault(){
           let defaulText = `
-## Juan Manuel Ramos Rodríguez 
-#### *Binvenidos a mi portfolio de web developer*
+          
+# Juan Manuel Ramos Rodríguez 
+## *Proyecto Markdown Preview*
 
-<hr>
+
+\`\`\`
+function saludo(){
+  return holaMuyBuenas;
+}
+\`\`\`
 
 <dl>
   <dt>Amplía tu red de trabajo y conectemos:</dt>
 
-[Github](https://www.linkedin.com/in/juan-manuel-ramos-rodriguez/) | [Linkedin](https://github.com/JuanmaRamosRodriguez)
+[Linkedin](https://www.linkedin.com/in/juan-manuel-ramos-rodriguez/) | [Github](https://github.com/JuanmaRamosRodriguez)
 
-
+<dt>Sobre mí:</dt>
+<dd>Web Developer web enfocado en el front-end. Aunque mi camino profesional está comenzando, 
+  me motiva aprender y ampliar mis conocimientos para fortalecer mis habilidades.</dd>
 </dl>
 
-<hr>
+#### Habilidades Principales
 
-\`Gracias por pasarte por aquí ^_^\`
+- **Angular**
+- Nodejs
+- JavaScript
+
+> Y seguimos para bingo!
+
+
+\`Gracias por pasarte a ver! ^_^\`
+
+![gif](https://industrywired.com/wp-content/uploads/2022/04/Top-10-Animes-that-Encourage-to-Coding-Skills.jpg)
+
 
           `;
           let editorField = document.getElementById("editor");
@@ -43,22 +61,38 @@
           previewElement.innerHTML = marked(defaulText);
         }
     </script>
+    <style>
+      .bg-opacity-custom {
+        background-color: rgba(24, 88, 185, 0.5); 
+      } 
+      .bg-opacity-custom-2 {
+        background-color: rgba(27, 117, 4, 0.5); 
+      }
+      .bg-background-editor {
+        background-color: rgba(213, 230, 233, 0.637); 
+      }  
+      .bg-backtext{
+        background-color: rgba(211, 124, 131, 0.637);
+      }
+    </style>
   </head>
   <body onload="setDefault()">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center py-5 bg-danger text-light">
-                <h1>Markdown previewer</h1>
+    <div class="container-fluid regular-shadow bg-opacity-custom">
+        <div class="row bg-opacity-custom">
+            <div class="col text-center py-3 text-light">
+                <h1>⭐Markdown previewer⭐</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6 text-white bg-info">
-                <p>Aquí va el editor</p>
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>    
+        <div class="row ">
+            <div class="col-6 text-white d-flex flex-column">
+                <h2 class="my-4 text-center font-weight-light bg-backtext">EDITOR</h2>
+                <div class="form-group flex-grow-1 d-flex flex-column">
+                <textarea id="editor" class="form-control flex-grow-1 bg-background-editor" onkeyup="updatePreview()"></textarea>  
+              </div>  
             </div>
-            <div class="col-6 text-white bg-success">
-                <p>Aquí va el markdown</p>
+            <div class="col-6 text-white">
+                <h2 class="my-4 text-center font-weight-light bg-backtext">PREVIEW:</h2>
                 <div id="preview"></div>    
             </div>
         </div>
